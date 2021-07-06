@@ -14,7 +14,7 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
   <header class="container header">
     <nav class="navigation">
       <a href="index.html" class="logo">
@@ -43,20 +43,20 @@
         <ul class="navigation__list">
           <li class="navigation__list-item">
             <a href="#">Каталог</a>
-            <div class="visually-hidden">
-              <p>Новинки</p>
-              <ul>
-                <li>
-                  <a href="#">Сливочное</a>
+            <div class="navigation__modal-wrapper">
+              <p class="navigation__modal-title">Новинки</p>
+              <ul class="navigation__modal-list">
+                <li class="navigation__modal-item">
+                  <a href="#" class="navigation__modal-link">Сливочное</a>
                 </li>
-                <li>
-                  <a href="#">Щербеты</a>
+                <li class="navigation__modal-item">
+                  <a href="#" class="navigation__modal-link">Щербеты</a>
                 </li>
-                <li>
-                  <a href="#">Фруктовый лёд</a>
+                <li class="navigation__modal-item">
+                  <a href="#" class="navigation__modal-link">Фруктовый лёд</a>
                 </li>
-                <li>
-                  <a href="#">Мелорин</a>
+                <li class="navigation__modal-item">
+                  <a href="#" class="navigation__modal-link">Мелорин</a>
                 </li>
               </ul>
             </div>
@@ -73,12 +73,11 @@
           <li class="navigation__user-item navigation__search">
             <a href="#" class="navigation__user-link" aria-label="Поиск по сайту"></a>
             <!--Форма поиска-->
-            <form action="#" class="visually-hidden">
-              <input type="text">
+            <form action="#" class="navigation__search-form">
+              <input type="text" class="navigation__search-input" placeholder="Крем брюле">
             </form>
           </li>
           <li class="navigation__user-item">
-
             <a href="#" class="navigation__user-link" aria-label="Вход в личный кабинет">
               <svg width="20" height="20" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.04 14.88L12.96 9.5L6.04 4.13V7.04H0V11.96H6.04V14.88Z" fill="white" />
@@ -87,16 +86,20 @@
                   fill="white" />
               </svg>Вход</a>
             <!--Форма входа-->
-            <form action="" class="visually-hidden">
-              <label for="">
-                <input type="text">
+            <form action="GET" class="navigation__login-form visually-hidden">
+              <label for="email">
+                <input type="email" id="email" class="navigation__login-input" placeholder="email@example.com">
               </label>
-              <label for="">
-                <input type="text">
+              <label for="password" id="password">
+                <input type="password" class="navigation__login-input">
               </label>
-              <button type="submit">Войти</button>
-              <a href="#">Забыли пароль?</a>
-              <a href="#">Новая регистрация</a>
+              <div class="navigation__login-links-wrapper">
+                <button type="submit" class="button button--red">Войти</button>
+                <div class="navigation__registration-wrapper">
+                  <a href="#" class="navigation__login-link">Забыли пароль?</a>
+                  <a href="#" class="navigation__login-link">Новая регистрация</a>
+                </div>
+              </div>
             </form>
           </li>
           <li class="navigation__user-item">
@@ -123,25 +126,32 @@
   </header>
 
   <main>
-    <section>
-      <ul>
-        <li>
-          <p>Крем-брюле и пломбир с малиновым джемом</p>
-          <img src="#" alt="Презентация мороженого">
-          <button type="button">Давайте оба!</button>
+    <section class="promotions container">
+      <ul class="promotions__list">
+        <li class="promotions__list-item">
+          <div class="promotions__img-wrapper">
+            <img src="../674811-gllacy-31/img/icecream-promotion1-1.png" alt="Презентация мороженого" width="372"
+              height="584" class="promotions__item-img promotions__item-img--big">
+            <img src="../674811-gllacy-31/img/icecream-promotion1-2.png" alt="Презентация мороженого" width="333"
+              height="519" class="promotions__item-img promotions__item-img--small">
+          </div>
+          <div class="promotions__text-wrapper">
+            <h2 class="promotions__item-title">Крем-брюле и пломбир с малиновым джемом</h2>
+            <button type="button">Давайте оба!</button>
+          </div>
         </li>
-        <li>
+        <li class="visually-hidden">
           <p>Шоколадный пломбир и лимонный сорбет</p>
           <img src="#" alt="Презентация мороженого">
           <button type="button">Давайте оба!</button>
         </li>
-        <li>
+        <li class="visually-hidden">
           <p>Пломбир с помадкой и клубничный щербет</p>
           <img src="#" alt="Презентация мороженого">
           <button type="button">Давайте оба!</button>
         </li>
       </ul>
-      <ul>
+      <ul class="visually-hidden">
         <li><button type="button" aria-label="Следующая акция"></button></li>
         <li><button type="button" aria-label="Следующая акция"></button></li>
         <li><button type="button" aria-label="Следующая акция"></button></li>
@@ -168,13 +178,47 @@
       <!--Невидимый-->
       <ul class="icecream__list">
         <li class="icecream__list-item">
+          <div class="icecream__item-elements"></div>
           <img src="../674811-gllacy-31/img/hit-1.png" class="icecream__item-img" alt="Изображение мороженого"
             width="267" height="267">
           <p class="icecream__price-weight"><span class="icecream__price">310 ₽</span><span
               class="icecream__weight">/кг</span></p>
           <p class="icecream__description"><span>Сливочное с апельсиновым джемом и цитрусовой стружкой</span> </p>
-          <div class="icecream__focus-block visually-hidden">
-            <button type="button" class="button button--red">Быстрый просмотр</button>
+          <div class="icecream__focus-block">
+            <button type="button" class="button button--red button--item">Быстрый просмотр</button>
+          </div>
+        </li>
+        <li class="icecream__list-item">
+          <div class="icecream__item-elements"></div>
+          <img src="../674811-gllacy-31/img/hit-2.png" class="icecream__item-img" alt="Изображение мороженого"
+            width="267" height="267">
+          <p class="icecream__price-weight"><span class="icecream__price">380 ₽</span><span
+              class="icecream__weight">/кг</span></p>
+          <p class="icecream__description"><span>Сливочно-кофейное с кусочками <br> шоколада</span> </p>
+          <div class="icecream__focus-block">
+            <button type="button" class="button button--red button--item">Быстрый просмотр</button>
+          </div>
+        </li>
+        <li class="icecream__list-item">
+          <div class="icecream__item-elements"></div>
+          <img src="../674811-gllacy-31/img/hit-3.png" class="icecream__item-img" alt="Изображение мороженого"
+            width="267" height="267">
+          <p class="icecream__price-weight"><span class="icecream__price">355 ₽</span><span
+              class="icecream__weight">/кг</span></p>
+          <p class="icecream__description"><span>Сливочно-клубничное <br> с присыпкой из белого шоколада</span> </p>
+          <div class="icecream__focus-block">
+            <button type="button" class="button button--red button--item">Быстрый просмотр</button>
+          </div>
+        </li>
+        <li class="icecream__list-item">
+          <div class="icecream__item-elements"></div>
+          <img src="../674811-gllacy-31/img/hit-4.png" class="icecream__item-img" alt="Изображение мороженого"
+            width="267" height="267">
+          <p class="icecream__price-weight"><span class="icecream__price">415 ₽</span><span
+              class="icecream__weight">/кг</span></p>
+          <p class="icecream__description"><span>Сливочное с крем-брюле <br> с карамельной подливкой</span> </p>
+          <div class="icecream__focus-block">
+            <button type="button" class="button button--red button--item">Быстрый просмотр</button>
           </div>
         </li>
       </ul>
@@ -244,7 +288,7 @@
           Адрес главного офиса и офлайн-магазина:
         </p>
         <p class="map__adress">наб. Реки Карповки,<br>
-           5 лит П, Санкт-Петербург</p>
+          5 лит П, Санкт-Петербург</p>
         <p class="map__phone-text">
           Для заказов по телефону:
           <a href="tel:+78005558628" class="map__tel">+7 800 555-86-28</a><br>
@@ -252,22 +296,28 @@
         </p>
         <button type="button" class="button button--red button--narrow button--wide">Форма обратной связи</button>
       </div>
-      <div class="visually-hidden">
+      <div class="map__feedback">
+        <p class="map__feedback-title">Мы обязательно Вам ответим!</p>
         <!--Модальное окно фидбэка-->
-        <form action="#">
-          <label for="">
-            <input type="text">
+        <form action="#" class="map__feedback-form">
+          <label for="login">
+            <input type="text" placeholder="Имя Фамилия" class="map__feedback-input">
           </label>
-          <label for="">
-            <input type="text">
+          <label for="mail">
+            <input type="email" id="mail" placeholder="email@example.com" class="map__feedback-input">
           </label>
-          <label for=""></label>
-          <textarea name="message" id="#" cols="30" rows="10">В свободной
-          форме
-        </textarea>
-          <button type="submit"></button>
+          <label for="comment"></label>
+          <textarea name="message" id="comment" cols="30" rows="10" class="map__feedback-comment"
+            placeholder="В свободной форме"></textarea>
+          <button type="submit" class="button button--red button--right">Отправить</button>
+          <button type="button" class="map__feedback-close">
+            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18 1.4175L16.4885 0L8.99468 7.07747L1.50089 0L0 1.4175L7.49379 8.49497L0 15.5724L1.50089 17L8.99468 9.92253L16.4885 17L18 15.5724L10.5062 8.49497L18 1.4175Z"
+                fill="#231F20" />
+            </svg>
+          </button>
         </form>
-        <button type="button"></button>
       </div>
     </section>
   </main>
@@ -275,17 +325,21 @@
     <ul class="socials__list">
       <li class="socials__list-item">
         <a href="facebook" class="socials__list-link">
-          <img src="../674811-gllacy-31/img/facebook-icon.svg" alt="иконка фэйсбук" width="32" height="32" class="socials__list-icon">
+          <img src="../674811-gllacy-31/img/facebook-icon.svg" alt="иконка фэйсбук" width="32" height="32"
+            class="socials__list-icon">
         </a>
       </li>
       <li class="socials__list-item">
-        <a href="vkontakte" class="socials__list-link"><img src="../674811-gllacy-31/img/vk-icon.svg" alt="иконка вконтакте" width="32" height="32" class="socials__list-icon"></a>
+        <a href="vkontakte" class="socials__list-link"><img src="../674811-gllacy-31/img/vk-icon.svg"
+            alt="иконка вконтакте" width="32" height="32" class="socials__list-icon"></a>
       </li>
       <li class="socials__list-item">
-        <a href="instagram" class="socials__list-link"><img src="../674811-gllacy-31/img/insta-icon.svg" alt="иконка инстраграм" width="32" height="32" class="socials__list-icon"></a>
+        <a href="instagram" class="socials__list-link"><img src="../674811-gllacy-31/img/insta-icon.svg"
+            alt="иконка инстраграм" width="32" height="32" class="socials__list-icon"></a>
       </li>
       <li class="socials__list-item">
-        <a href="twitter" class="socials__list-link"><img src="../674811-gllacy-31/img/twitter-icon.svg" alt="иконка твиттер" width="32" height="32" class="socials__list-icon"></a>
+        <a href="twitter" class="socials__list-link"><img src="../674811-gllacy-31/img/twitter-icon.svg"
+            alt="иконка твиттер" width="32" height="32" class="socials__list-icon"></a>
       </li>
     </ul>
     <ul class="about-list">
@@ -303,8 +357,10 @@
       </li>
     </ul>
     <div class="html-block">
-      <img src="../674811-gllacy-31/img/HTML Academy.svg" alt="html academy" class="html-block__logo" width="108" height="31">
-      <p class="html-block__text">Сделано в <a href="htmlacademy.ru" class="html-block__academy-link">HTML Academy</a> © 2021</p>
+      <img src="../674811-gllacy-31/img/HTML Academy.svg" alt="html academy" class="html-block__logo" width="108"
+        height="31">
+      <p class="html-block__text">Сделано в <a href="htmlacademy.ru" class="html-block__academy-link">HTML Academy</a> ©
+        2021</p>
     </div>
   </footer>
 </body>
