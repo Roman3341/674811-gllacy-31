@@ -73,7 +73,7 @@
           <li class="navigation__user-item navigation__search">
             <a href="#" class="navigation__user-link" aria-label="Поиск по сайту"></a>
             <!--Форма поиска-->
-            <form action="#" class="navigation__search-form">
+            <form action="#" class="navigation__search-form visually-hidden">
               <input type="text" class="navigation__search-input" placeholder="Крем брюле">
             </form>
           </li>
@@ -107,7 +107,7 @@
               <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M5.70345 2L5.46161 0H0V2H3.66795L5.17946 15H19.2869L21 2H5.70345ZM17.5034 13H6.97313L5.96545 4H18.6924L17.5034 13Z"
-                  fill="black"/>
+                  fill="black" />
                 <path
                   d="M7.03359 20C8.14664 20 9.04894 19.1046 9.04894 18C9.04894 16.8954 8.14664 16 7.03359 16C5.92054 16 5.01823 16.8954 5.01823 18C5.01823 19.1046 5.92054 20 7.03359 20Z"
                   fill="black" />
@@ -124,50 +124,43 @@
       <a class="header__information-tel" href="tel:+78124502525">8 812 450-25-25</a>
     </p>
   </header>
-  <main>
-    <ul>
-      <li>
-        <a href="#">Главная</a>
+  <main class="container">
+    <ul class="bread-crumbs">
+      <li class="bread-crumbs__item">
+        <a href="#" class="bread-crumbs__link">Главная</a>
       </li>
-      <li>
-        <a href="#">Каталог</a>
+      <li class="bread-crumbs__item">
+        <a href="#" class="bread-crumbs__link">Каталог</a>
       </li>
-      <li>
+      <li class="bread-crumbs__item">
         Сливочное
       </li>
     </ul>
-    <h1>Сливочное мороженое</h1>
-    <form action="#">
-      <label for="#">
-        <select name="sort" id="#">
-          <option value="popular">по популярности</option>
-          <option value="cheap">сначала недорогие</option>
-          <option value="expensive">сначала дорогие</option>
-          <option value="fat">по жирности</option>
+    <h1 class="catalog-title">Сливочное мороженое</h1>
+    <form action="#" class="catalog-form">
+      <div class="catalog-form__price-filter-wrapper">
+        <label for="cost" class="catalog-form__label"> Сортировка:</label>
+        <select name="sort" id="cost" class="catalog-form__price-filter">
+          <option value="popular" class="catalog-form__price-filter-option">по популярности</option>
+          <option value="cheap" class="catalog-form__price-filter-option">сначала недорогие</option>
+          <option value="expensive" class="catalog-form__price-filter-option">сначала дорогие</option>
+          <option value="fat" class="catalog-form__price-filter-option">по жирности</option>
         </select>
-      </label>
-      <div>
-        <p>Цена: 100 ₽ – 500 ₽</p>
-        <img src="#" alt="Шкала">
       </div>
-      <fieldset>
-        <legend>Жирность:</legend>
-        <ul>
-          <li>
-            <label for="#">0%</label>
-            <input type="radio">
-          </li>
-          <li>
-            <label for="#">до 10%</label>
-            <input type="radio">
-          </li>
-          <li>
-            <label for="#">до 30%</label>
-            <input type="radio">
-          </li>
-          <li>
-            <label for="#">выше 30%</label>
-            <input type="radio">
+      <div class="catalog-form__price-scale-wrapper">
+        <p class="catalog-form__label">Цена: 100 ₽ – 500 ₽</p>
+        <div class="catalog-form__price-scale">
+          <div class="catalog-form__scale"></div>
+          <div class="catalog-form__scale-ring catalog-form__scale-ring--right"></div>
+          <div class="catalog-form__scale-ring catalog-form__scale-ring--left"></div>
+        </div>
+      </div>
+      <fieldset class="catalog-form__fatness">
+        <legend class="catalog-form__fatness-title">Жирность:</legend>
+        <ul class="catalog-form__fatness-list">
+          <li class="catalog-form__fatness-item">
+            <input type="radio" class="catalog-form__fatness-input" id="0%" checked>
+            <label for="0%" value="no-fat" name="fatness" class="catalog-form__fatness-label">0%</label>
           </li>
         </ul>
       </fieldset>

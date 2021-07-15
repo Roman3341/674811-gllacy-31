@@ -105,7 +105,7 @@ img {
   z-index: 0;
 }
 
-.navigation__user-item--cart a{
+.navigation__user-item--cart a {
   background-color: #FFFFFF;
   color: var(--black-custom);
 }
@@ -242,7 +242,8 @@ img {
   display: block;
   width: 341px;
   height: 84px;
-  background-color: #F8F7F4; ;
+  background-color: #F8F7F4;
+  ;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 36px;
@@ -755,7 +756,8 @@ img {
   width: 477px;
   box-sizing: border-box;
   padding: 20px 25px 25px 24px;
-  background-color: #F8F7F4;;
+  background-color: #F8F7F4;
+  ;
   border-radius: 6px;
 }
 
@@ -804,7 +806,7 @@ img {
   width: 428px;
   height: 154px;
   resize: none;
-  color:#999999;
+  color: #999999;
   background-color: #FFFFFF;
   font-size: 16px;
   line-height: 20px;
@@ -920,6 +922,188 @@ img {
 }
 
 /*Каталог*/
+.bread-crumbs {
+  display: flex;
+  flex-direction: row;
+  width: 224px;
+  margin-bottom: 9px;
+}
 
+.bread-crumbs__item {
+  margin-right: 22px;
+  font-size: 14px;
+  line-height: 16px;
+  position: relative;
+}
 
+.bread-crumbs__item:not(:last-child):before {
+  content: url(../img/forward-icon.svg);
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: 0px;
+  right: -14px;
+}
 
+.bread-crumbs__link {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.catalog-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.catalog-title {
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 29px;
+}
+
+.catalog-form__label {
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  margin-bottom: 7px;
+  margin-left: 16px;
+  font-weight: 500;
+}
+
+.catalog-form__price-filter-wrapper {
+  margin-right: 15px;
+}
+
+.catalog-form__price-filter {
+  box-sizing: border-box;
+  display: block;
+  width: 196px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #FFFFFF;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+  padding: 9px 14px 8px 16px;
+}
+
+.catalog-form__price-scale {
+  display: block;
+  width: 218px;
+  height: 36px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 7px;
+}
+
+.catalog-form__scale {
+  display: block;
+  width: 176px;
+  height: 2px;
+  background-color: rgba(248, 247, 244, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 21px;
+}
+
+.catalog-form__scale::before {
+  content: "";
+  display: block;
+  width: 106px;
+  height: 2px;
+  background-color: #F8F7F4;;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-1px);
+}
+
+.catalog-form__scale-ring {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  background-color: #FFFFFF;
+}
+
+.catalog-form__scale-ring--left {
+  left: 33px;
+}
+
+.catalog-form__scale-ring--right {
+  left: 131px;
+}
+
+.catalog-form__scale-ring::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ABABAB;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.catalog-form__scale-ring::after {
+  content: url(../img/scale-vector.svg);
+  width: 20px;
+  height: 12px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+}
+
+.catalog-form__fatness {
+  display: block;
+  border: none;
+  width: 425px;
+  height: 36px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.catalog-form__fatness-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.catalog-form__fatness-item {
+  position: relative;
+}
+
+.catalog-form__fatness-label {
+  
+}
+
+.catalog-form__fatness input[type="radio"]+label::before {
+  content: url(../img/radio-off.svg);
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.catalog-form__fatness-input {
+  display: none;
+}
+
+.catalog-form__fatness input[type="radio"]:checked+label::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+}
